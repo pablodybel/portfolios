@@ -1,0 +1,111 @@
+{
+  "projects": [
+    {
+      "name": "App de Delivery",
+      "description": "Aplicación móvil para pedidos de comida con geolocalización en tiempo real",
+      "link": "https://github.com/user/delivery-app",
+      "img": "https://picsum.photos/400/225?random=1",
+      "technologies": ["React Native", "Node.js", "MongoDB"],
+      "section": "Mobile"
+    },
+    {
+      "name": "E-commerce Fashion",
+      "description": "Tienda online de ropa con carrito de compras y pasarela de pagos",
+      "link": "https://github.com/user/fashion-store",
+      "img": "https://picsum.photos/400/225?random=2",
+      "technologies": ["Vue.js", "Laravel", "MySQL"],
+      "section": "e-Commerce"
+    },
+    {
+      "name": "Landing Agencia Digital",
+      "description": "Página de aterrizaje moderna para agencia de marketing digital",
+      "link": "https://github.com/user/agency-landing",
+      "img": "https://picsum.photos/400/225?random=3",
+      "technologies": ["HTML5", "CSS3", "JavaScript"],
+      "section": "LandingPage"
+    },
+    {
+      "name": "Sistema de Gestión",
+      "description": "Aplicación web para gestión de inventarios y ventas",
+      "link": "https://github.com/user/management-system",
+      "img": "https://picsum.photos/400/225?random=4",
+      "technologies": ["React", "Express", "PostgreSQL"],
+      "section": "Web App"
+    },
+    {
+      "name": "Juego Puzzle",
+      "description": "Juego de rompecabezas interactivo con múltiples niveles",
+      "link": "https://github.com/user/puzzle-game",
+      "img": "https://picsum.photos/400/225?random=5",
+      "technologies": ["Unity", "C#", "Firebase"],
+      "section": "Games"
+    },
+    {
+      "name": "App Fitness",
+      "description": "Aplicación móvil para seguimiento de ejercicios y rutinas",
+      "link": "https://github.com/user/fitness-app",
+      "img": "https://picsum.photos/400/225?random=6",
+      "technologies": ["Flutter", "Dart", "SQLite"],
+      "section": "Mobile"
+    },
+    {
+      "name": "Marketplace B2B",
+      "description": "Plataforma de comercio electrónico para empresas",
+      "link": "https://github.com/user/b2b-marketplace",
+      "img": "https://picsum.photos/400/225?random=7",
+      "technologies": ["Angular", "Spring Boot", "MongoDB"],
+      "section": "e-Commerce"
+    },
+    {
+      "name": "Portfolio Personal",
+      "description": "Sitio web personal con portafolio de trabajos creativos",
+      "link": "https://github.com/user/personal-portfolio",
+      "img": "https://picsum.photos/400/225?random=8",
+      "technologies": ["Gatsby", "GraphQL", "Netlify"],
+      "section": "LandingPage"
+    },
+    {
+      "name": "Dashboard Analytics",
+      "description": "Panel de control con gráficos y métricas en tiempo real",
+      "link": "https://github.com/user/analytics-dashboard",
+      "img": "https://picsum.photos/400/225?random=9",
+      "technologies": ["Vue.js", "D3.js", "WebSockets"],
+      "section": "Web App"
+    },
+    {
+      "name": "Juego Tower Defense",
+      "description": "Juego de estrategia de defensa de torres",
+      "link": "https://github.com/user/tower-defense",
+      "img": "https://picsum.photos/400/225?random=10",
+      "technologies": ["Phaser", "JavaScript", "Socket.io"],
+      "section": "Games"
+    }
+  ],
+  "clients": [
+    {
+      "name": "TechStart Solutions",
+      "photo": "https://picsum.photos/200/200?random=11",
+      "description": "Startup de tecnología especializada en soluciones empresariales"
+    },
+    {
+      "name": "Fashion Boutique",
+      "photo": "https://picsum.photos/200/200?random=12",
+      "description": "Tienda de moda online con presencia en redes sociales"
+    },
+    {
+      "name": "Digital Marketing Pro",
+      "photo": "https://picsum.photos/200/200?random=13",
+      "description": "Agencia de marketing digital y publicidad online"
+    },
+    {
+      "name": "GameDev Studio",
+      "photo": "https://picsum.photos/200/200?random=14",
+      "description": "Estudio independiente de desarrollo de videojuegos"
+    },
+    {
+      "name": "HealthTech Corp",
+      "photo": "https://picsum.photos/200/200?random=15",
+      "description": "Empresa de tecnología aplicada a la salud y bienestar"
+    }
+  ]
+}

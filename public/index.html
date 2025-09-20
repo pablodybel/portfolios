@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Proyectos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Nuestro Portfolio</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link active" data-section="all">Todos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="Mobile">Mobile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="LandingPage">Landing Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="Web App">Web App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="e-Commerce">E-Commerce</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="Games">Games</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h2 id="page-title">Todos los Proyectos</h2>
+                <div class="header-actions">
+                    <button id="add-project-btn" class="btn btn-primary">+ Agregar Proyecto</button>
+                </div>
+                <div class="filters">
+                    <input type="text" id="search-name" placeholder="Buscar por nombre..." class="filter-input">
+                    <input type="text" id="search-tech" placeholder="Buscar por tecnología..." class="filter-input">
+                    <button id="clear-filters" class="btn btn-secondary">Limpiar Filtros</button>
+                </div>
+            </div>
+            
+            <div id="loading" class="loading">Cargando proyectos...</div>
+            <div id="projects-grid" class="projects-grid"></div>
+            <div id="no-projects" class="no-projects" style="display: none;">
+                No se encontraron proyectos para esta sección.
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para agregar/editar proyecto -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Agregar Nuevo Proyecto</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="project-form" class="project-form">
+                <div class="form-group">
+                    <label for="project-name">Nombre del Proyecto *</label>
+                    <input type="text" id="project-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-description">Descripción *</label>
+                    <textarea id="project-description" name="description" required rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-link">Link del Repositorio *</label>
+                    <input type="url" id="project-link" name="link" required placeholder="https://github.com/user/proyecto">
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-img">URL de la Imagen *</label>
+                    <input type="url" id="project-img" name="img" required placeholder="https://picsum.photos/400/225">
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-section">Sección *</label>
+                    <select id="project-section" name="section" required>
+                        <option value="">Selecciona una sección</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="LandingPage">Landing Page</option>
+                        <option value="Web App">Web App</option>
+                        <option value="e-Commerce">E-Commerce</option>
+                        <option value="Games">Games</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-technologies">Tecnologías *</label>
+                    <input type="text" id="project-technologies" name="technologies" required 
+                           placeholder="React, Node.js, MongoDB (separadas por comas)">
+                    <small>Ingresa las tecnologías separadas por comas</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-client">Cliente (Opcional)</label>
+                    <select id="project-client" name="clientId">
+                        <option value="">Sin cliente específico</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-btn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Guardar Proyecto</button>
+                </div>
+            </form>
+            
+            <div id="form-loading" class="form-loading" style="display: none;">
+                Guardando proyecto...
+            </div>
+            
+            <div id="form-message" class="form-message" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Modal para confirmar eliminación -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content delete-modal-content">
+            <div class="modal-header">
+                <h3>Confirmar Eliminación</h3>
+                <span class="close-delete-modal">&times;</span>
+            </div>
+            <div class="delete-modal-body">
+                <div class="delete-warning">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </div>
+                <p>¿Estás seguro de que deseas eliminar este proyecto?</p>
+                <p class="delete-project-name"></p>
+                <p class="delete-warning-text">Esta acción no se puede deshacer.</p>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="cancel-delete-btn">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete-btn">Eliminar Proyecto</button>
+            </div>
+            
+            <div id="delete-loading" class="form-loading" style="display: none;">
+                Eliminando proyecto...
+            </div>
+            
+            <div id="delete-message" class="form-message" style="display: none;"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Pablo Dybel y Orianna Lugo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
